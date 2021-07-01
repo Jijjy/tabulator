@@ -691,7 +691,7 @@ Format.prototype.formatters = {
 
 		checkbox.type = 'checkbox';
 
-		if(this.table.modExists("selectRow", true)){
+		if(this.table.modExists("selectRow", true) && this.table.options.selectableCheck.call(this.table, cell.getRow().getComponent())){
 
 			checkbox.addEventListener("click", (e) => {
 				e.stopPropagation();
